@@ -13,4 +13,11 @@
     <string name="search">Search</string>
     <string name="account">Account</string>
     <string name="settings">Settings</string>
+
+    <string name="plus">New</string>
+
+    <string name="logout">Logout</string>
+    
+    <string name="edit">Edit</string>
+    <string name="logoutToast">Successfully Logged out</string>
 </resources>
