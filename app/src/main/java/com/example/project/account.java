@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class 
+public class
 account extends Fragment {
 
     Boolean LoggedIn = true;
@@ -29,9 +29,9 @@ account extends Fragment {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent logoutIntent =  new Intent(getActivity(),LoginActivity.class);
+                Intent logoutIntent = new Intent(getActivity(),LoginActivity.class);
                 startActivity(logoutIntent);
-                Toast.makeText(getActivity(),R.string.logoutToast,Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),R.string.logoutToast,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -51,7 +51,7 @@ account extends Fragment {
         super.onCreate(savedInstanceState);
 
         if(!LoggedIn){
-            Intent LoginIntent =  new Intent(getContext(),LoginActivity.class);
+            Intent LoginIntent =  new Intent(getContext(),login.class);
             startActivity(LoginIntent);
         }//else{
         //          code to retrive the profile from the database and display it

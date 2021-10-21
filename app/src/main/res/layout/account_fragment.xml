@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/project_bg_2"
+    android:id="@+id/accountFragment"
     tools:context=".account">
 
     <TextView

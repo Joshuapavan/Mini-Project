@@ -17,7 +17,11 @@
     <string name="plus">New</string>
 
     <string name="logout">Logout</string>
-    
+
     <string name="edit">Edit</string>
     <string name="logoutToast">Successfully Logged out</string>
+
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="title">Title</string>
 </resources>

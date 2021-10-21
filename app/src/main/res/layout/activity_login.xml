@@ -11,20 +11,20 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginBottom="52dp"
         android:fontFamily="@font/rollis"
         android:text="@string/welcome"
         android:textColor="@color/black"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/email" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="215dp"
         android:background="@drawable/edittext_bg"
         android:drawableStart="@drawable/ic_email"
         android:drawablePadding="10dp"
@@ -40,15 +40,14 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edittext_bg"
         android:drawableStart="@drawable/ic_password"
         android:drawablePadding="10dp"
@@ -63,16 +62,14 @@
         android:paddingStart="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/email"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <android.widget.Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/button_secondary_bg"
         android:maxWidth="200dp"
         android:maxHeight="50dp"
@@ -82,7 +79,6 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
@@ -90,8 +86,8 @@
         android:id="@+id/skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/button_primary_bg"
         android:drawableEnd="@drawable/ic_arrow_right"
         android:drawableTint="@color/black"
@@ -108,23 +104,23 @@
         android:id="@+id/otherSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="31dp"
         android:gravity="center"
         android:text="@string/otherLogin"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/googleSignIn"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <ImageButton
         android:id="@+id/googleSignIn"
-        android:layout_width="36dp"
+        android:layout_width="0dp"
         android:layout_height="34dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="39dp"
         android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintEnd_toStartOf="@+id/facebookSignIn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/otherSignIn"
         app:srcCompat="@drawable/ic_google" />
@@ -133,9 +129,10 @@
         android:id="@+id/facebookSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="149dp"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/googleSignIn"
         app:layout_constraintTop_toBottomOf="@+id/otherSignIn"
         app:srcCompat="@drawable/ic_facebook" />

@@ -40,4 +40,5 @@ public class LoginActivity extends AppCompatActivity {
         googleButton =  findViewById(R.id.googleSignIn);
         facebookButton = findViewById(R.id.facebookSignIn);
     }
+
 }

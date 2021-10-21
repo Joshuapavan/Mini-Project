@@ -29,7 +29,8 @@ public  class search extends Fragment {
         newButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent createNewDiary = new Intent(getActivity(),)
+//                Intent createNewDiary = new Intent(getActivity(),NewNote.class);
+//                startActivity(createNewDiary);
             }
         });
         return (view);
