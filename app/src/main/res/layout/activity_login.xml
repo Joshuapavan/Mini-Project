@@ -86,56 +86,70 @@
         android:id="@+id/skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="44dp"
         android:background="@drawable/button_primary_bg"
         android:drawableEnd="@drawable/ic_arrow_right"
         android:drawableTint="@color/black"
-        android:paddingLeft="20dp"
-        android:paddingEnd="10dp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/skip"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/otherSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/otherLogin"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/googleSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
-
-    <ImageButton
-        android:id="@+id/googleSignIn"
-        android:layout_width="0dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="39dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/facebookSignIn"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/otherSignIn"
-        app:srcCompat="@drawable/ic_google" />
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-        android:id="@+id/facebookSignIn"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="149dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/googleSignIn"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/otherSignIn"
-        app:srcCompat="@drawable/ic_facebook" />
+        tools:layout_editor_absoluteY="487dp">
 
+        <ImageButton
+            android:id="@+id/googleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="31dp"
+            android:layout_marginEnd="39dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/facebookSignIn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherSignIn"
+            app:srcCompat="@drawable/ic_google" />
 
+        <ImageButton
+            android:id="@+id/facebookSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="149dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/googleSignIn"
+            app:layout_constraintTop_toBottomOf="@+id/otherSignIn"
+            app:srcCompat="@drawable/ic_facebook" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

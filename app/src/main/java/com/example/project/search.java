@@ -1,11 +1,11 @@
 package com.example.project;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,26 +13,35 @@ import androidx.fragment.app.Fragment;
 
 public  class search extends Fragment {
 
+    //Declaring widget objects
     Button newButton;
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    EditText searchBar;
+    View searchView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.search_fragment,container,false);
 
-        newButton = view.findViewById(R.id.newButton);
+        //Creating a View object called searchView which will contain all the widgets that are created inside the fragment
+        searchView = inflater.inflate(R.layout.search_fragment,container,false);
 
-        newButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        initialise(searchView); //method to initialise all the widgets object to the Xml
+        newDiary(newButton); //method that has on click listener for the new note fragment or activity
+
+        return (searchView);//returning the view to the inflater which will display all the contents
+    }
+
+    //method to initialise all the widget objects
+    void initialise(View searchView){
+        newButton = searchView.findViewById(R.id.newButton);
+        searchBar = searchView.findViewById(R.id.search);
+    }
+
+    //method that contains the onclick listener for the new button which basically holds the intent which is to be passed when creating a fragment/ Activity
+    void newDiary(Button newButton){
+//        newButton.setOnClickListener(v -> {
 //                Intent createNewDiary = new Intent(getActivity(),NewNote.class);
 //                startActivity(createNewDiary);
-            }
-        });
-        return (view);
+//        });
     }
 }

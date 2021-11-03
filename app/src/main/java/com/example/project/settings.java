@@ -10,14 +10,21 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class settings extends Fragment {
-    @Override
-    public void onCreate( Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+
+    // creating a view object, settingsView which will hold all the widgets of the account fragment
+    View settingView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return(inflater.inflate(R.layout.settings_fragment,container,false));
+        settingView = (inflater.inflate(R.layout.settings_fragment,container,false));
+
+        initialse(settingView);//method used to initialise all the widgets of the settings Fragment using settingsView
+        return(settingView); //returning the settingsView to inflate in th layout
+    }
+
+    //method used to initialise all the widgets of the settings Fragment using settingsView
+    void initialse(View settingView){
+
     }
 }

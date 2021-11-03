@@ -12,49 +12,48 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class
-account extends Fragment {
+public class account extends Fragment {
 
     Boolean LoggedIn = true;
 
+    // creating a view object, accountView which will hold all the widgets of the account fragment
+    View accountView;
+
+    //Declaring the widget objects
     Button logoutButton,editButton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.account_fragment,container,false);
 
-        logoutButton =  view.findViewById(R.id.logoutButton);
-        editButton =  view.findViewById(R.id.editButton);
+        //Creating a View object called accountView which will contain all the widgets that are created inside the fragment
+        accountView = inflater.inflate(R.layout.account_fragment,container,false);
 
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent logoutIntent = new Intent(getActivity(),LoginActivity.class);
-                startActivity(logoutIntent);
-                Toast.makeText(getActivity(),R.string.logoutToast,Toast.LENGTH_SHORT).show();
-            }
-        });
+        initialise(accountView); //method used to initialise all the widget objects
 
+        logOut(logoutButton); //method for logout button
+        edit(editButton); //method for edit button
 
-        editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        return(view);
+        return(accountView); //returning the accountView to inflate in th layout
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    //method used to initialise all the widget objects
+    void initialise(View accountView){
+        logoutButton =  accountView.findViewById(R.id.logoutButton);
+        editButton =  accountView.findViewById(R.id.editButton);
+    }
 
-        if(!LoggedIn){
-            Intent LoginIntent =  new Intent(getContext(),login.class);
-            startActivity(LoginIntent);
-        }//else{
-        //          code to retrive the profile from the database and display it
-        //}
+    //method which holds onclickListener for logout button, which is used to logout from the current account and display a toast saying that we have logged out
+    void logOut(Button logoutButton){
+        logoutButton.setOnClickListener(v -> {
+            Intent logoutIntent = new Intent(getActivity(),LoginActivity.class);
+            startActivity(logoutIntent);
+            Toast.makeText(getActivity(),R.string.logoutToast,Toast.LENGTH_SHORT).show();
+        });
+    }
+    //method which holds onclickListener for edit button
+    void edit(Button editButton){
+        editButton.setOnClickListener(v -> {
+
+        });
     }
 }
